@@ -1,0 +1,472 @@
+/* ================= UBICACIÓN ================= */
+
+.ubicacion-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #121826, #0f1423);
+    color: white;
+}
+
+.ubicacion-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.ubicacion-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.ubicacion-titulo span {
+    color: #c40000;
+    font-weight: 600;
+}
+
+.ubicacion-descripcion {
+    line-height: 1.8;
+    color: #dcdcdc;
+    margin-bottom: 25px;
+}
+
+.ubicacion-datos p {
+    margin-bottom: 8px;
+    color: #cfcfcf;
+}
+
+/* BOTÓN MAPA */
+
+.btn-mapa {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #c40000, #8b0000);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.4s ease;
+}
+
+.btn-mapa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* MAPA */
+
+.ubicacion-mapa iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    filter: grayscale(100%) contrast(110%);
+    transition: 0.4s ease;
+}
+
+.ubicacion-mapa iframe:hover {
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .ubicacion-container {
+        grid-template-columns: 1fr;
+    }
+
+    .ubicacion-mapa iframe {
+        height: 300px;
+    }
+}
+
+
+/* ================= HERO SLIDER ================= */
+
+.hero-slider {
+    position: relative;
+    height:80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FONDO DINÁMICO */
+
+.slider-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(25px) brightness(0.5);
+    transform: scale(1.1); 
+    transition: background-image 0.7s ease;
+    z-index: 1;
+}
+
+/* CONTENEDOR */
+
+.slider-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SLIDES */
+
+.slide {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: 0.6s ease;
+    text-align: center;
+}
+
+.slide img {
+    width: 500px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+/* SLIDE ACTIVO */
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* TEXTO */
+
+.slide-content {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}
+
+.slide-content h2 {
+    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.slide-content p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* FLECHAS */
+
+.slider-nav {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 3;
+    transition: 0.3s;
+}
+
+.nav:hover {
+    transform: scale(1.2);
+}
+
+.slider-prev {
+    left: 30px;
+}
+
+.slider-next {
+    right: 30px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .slide img {
+        width: 300px;
+        height: 400px;
+    }
+
+    .slide-content h2 {
+        font-size: 28px;
+    }
+}
+
+
+
+/* ================= CONTACTO ULTRA PREMIUM ================= */
+
+.contacto-section {
+    padding: 140px 0;
+    background: radial-gradient(circle at center, #01011b, #380e0e);
+    display: flex;
+    justify-content: center;
+}
+
+/* TARJETA FLOTANTE */
+
+.contacto-card {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 80px;
+
+    padding: 80px 60px;
+
+    border-radius: 25px;
+
+    /* Mantiene efecto glass premium */
+    background: #2e2e2e;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgb(0, 0, 0);
+
+    box-shadow: 0 40px 80px rgb(0, 0, 0);
+    color: white;
+}
+
+/* INFO */
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-premium {
+    width: 100%;
+}
+
+.contacto-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.contacto-info span {
+    color: #c40000;
+    font-weight: 600;
+}
+
+.contacto-info p {
+    margin: 20px 0 30px;
+    color: #cfcfcf;
+    line-height: 1.7;
+}
+
+/* REDES */
+
+.redes a {
+    margin-right: 15px;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.redes a:hover {
+    color: #c40000;
+    transform: translateY(-3px);
+}
+
+/* FORM */
+
+.form-premium {
+    position: right;
+}
+
+/* INPUT GROUP */
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    color: #888;
+    width: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px 0 15px 35px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* GLOW ROJO SUAVE */
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-bottom: 1px solid #c40000;
+    box-shadow: 0 8px 20px rgba(196,0,0,0.2);
+}
+
+.input-group label {
+    position: absolute;
+    left: 35px;
+    top: 15px;
+    color: #aaa;
+    transition: 0.3s;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+    top: -10px;
+    font-size: 12px;
+    color: #c40000;
+}
+
+/* BOTÓN SHIMMER */
+
+.btn-shimmer {
+    width: 100%;
+    padding: 15px;
+    border-radius: 40px;
+    border: none;
+    background: linear-gradient(135deg, #c40000, #8b0000);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.btn-shimmer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.3);
+    transform: skewX(-25deg);
+    transition: 0.7s;
+}
+
+.btn-shimmer:hover::before {
+    left: 120%;
+}
+
+/* WHATSAPP */
+
+.btn-whatsapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 40px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+}
+
+/* MENSAJE ÉXITO */
+
+.success-message {
+    opacity: 0;
+    margin-top: 15px;
+    color: #00ffae;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.success-message.show {
+    opacity: 1;
+}
+
+
+
+
+/* ================= WHATSAPP FLOAT ================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: 0.3s ease;
+    animation: pulseWhatsapp 2.5s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Animación suave tipo pulso */
+
+@keyframes pulseWhatsapp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37,211,102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 18px rgba(37,211,102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37,211,102, 0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 58px;
+        height: 58px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
