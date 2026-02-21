@@ -16,6 +16,7 @@ body {
 }
 
 /* ================= HEADER ================= */
+/* ================= HEADER ================= */
 
 .header {
     background: #1f1f1f;
@@ -24,16 +25,14 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 15px rgba(63, 11, 11, 0.6);
 }
 
-.container {
+/* Contenedor personalizado sin romper Bootstrap */
+.custom-container {
     width: 90%;
     max-width: 1400px;
     margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 /* ================= LOGO ================= */
@@ -49,27 +48,25 @@ body {
     transform: scale(1.05);
 }
 
-/* ================= NAV ================= */
+/* ================= NAV PERSONALIZADO ================= */
 
-.nav-list {
-    list-style: none;
-    display: flex;
+.nav-custom {
     gap: 35px;
 }
 
-.nav-list li a {
-    text-decoration: none;
-    color: white;
+.nav-custom .nav-link {
+    color: white !important;
     font-weight: 500;
     position: relative;
     transition: 0.3s;
 }
 
-.nav-list li a:hover {
-    color: #e10600;
+.nav-custom .nav-link:hover {
+    color: #e10600 !important;
 }
 
-.nav-list li a::after {
+/* Línea animada inferior */
+.nav-custom .nav-link::after {
     content: "";
     position: absolute;
     width: 0%;
@@ -80,10 +77,14 @@ body {
     transition: 0.3s;
 }
 
-.nav-list li a:hover::after {
+.nav-custom .nav-link:hover::after {
     width: 100%;
 }
 
+/* Ajuste para que no se encime el contenido */
+body {
+    padding-top: 90px;
+}
 /* ================= SECCIÓN INICIO imagen (HERO PREMIUM) ================= */
 
 
