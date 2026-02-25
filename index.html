@@ -63,6 +63,13 @@
   </nav>
 </header>
 
+<script>
+window.addEventListener("scroll", function() {
+    const header = document.querySelector(".header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
 <section id="inicio" class="inicio">
 
     <div class="inicio-container">
@@ -86,7 +93,7 @@
             </p>
 
             <a href="#contacto" class="btn-premium">
-                Reservar Ahora
+                ¡Contactanos!
             </a>
 
         </div>
@@ -224,39 +231,43 @@
 
     <div class="slider-container">
 
-        <button class="slider-nav slider-prev">&#10094;</button>
+         
+         <div class="slide active"
+                data-bg="img/bodas/boda1.jpg">
 
-        <div class="slide active"
-            data-bg="https://images.unsplash.com/photo-1519167758481-83f550bb49b3">
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3" alt="">
-            <div class="slide-content">
-                <h2>BODAS</h2>
-                <p>Momentos inolvidables en GC Kabul</p>
-            </div>
+         <img src="img/bodas/boda1.jpg" alt="Bodas en GC Kabul">
+
+        <div class="slide-content">
+        <h2>BODAS</h2>
+        <p><strong>Momentos inolvidables en GC Kabul</strong> </p>
         </div>
-
-        <div class="slide"
-            data-bg="https://images.unsplash.com/photo-1492684223066-81342ee5ff30">
-            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30" alt="">
-            <div class="slide-content">
-                <h2>XV AÑOS</h2>
-                <p>Celebraciones llenas de magia</p>
-            </div>
-        </div>
-
-        <div class="slide"
-            data-bg="https://images.unsplash.com/photo-1527529482837-4698179dc6ce">
-            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce" alt="">
-            <div class="slide-content">
-                <h2>EVENTOS CORPORATIVOS</h2>
-                <p>Espacios profesionales y elegantes</p>
-            </div>
-        </div>
-
-        <button class="slider-nav slider-next">&#10095;</button>
-
     </div>
 
+        <div class="slide"
+                data-bg="img/xv/xv1.jpg.jpeg">
+
+         <img src="img/xv/xv1.jpg.jpeg" alt="XV años en GC Kabul">
+            <div class="slide-content">
+                <h2>XV AÑOS</h2>
+                <p><strong>Celebraciones llenas de magia en GC Kabul</strong> </p>
+            </div>
+        </div>
+
+        <div class="slide"
+                data-bg="img/Coorp/coorp1.jpg.jpeg">
+
+         <img src="img/Coorp/coorp1.jpg.jpeg" alt="Eventos corporativos en GC Kabul">
+            <div class="slide-content">
+            <div class="slide-content">
+                <h2>EVENTOS CORPORATIVOS</h2>
+                <p><strong>Espacios profesionales y elegantes en GC Kabul</strong></p>
+            </div>
+        </div>
+
+
+    </div>
+        <button class="slider-nav slider-prev">&#10094;</button>
+        <button class="slider-nav slider-next">&#10095;</button>
 </section>
 
 <section id="ubicacion" class="ubicacion-section">
@@ -269,17 +280,17 @@
             </h2>
 
             <p class="ubicacion-descripcion">
-                Estamos ubicados en una zona estratégica y de fácil acceso,
-                ideal para que tus invitados lleguen cómodamente y sin complicaciones.
+                Estamos ubicados cerca de la carretera México-Pachuca,
+                ideal para que tus invitados festejen cómodamente y sin complicaciones.
             </p>
 
             <div class="ubicacion-datos">
                 <p><strong>Salón de Eventos:</strong> GC Kabul</p>
-                <p><strong>Ciudad:</strong> (Aquí puedes poner tu ciudad)</p>
-                <p><strong>Horario:</strong> Atención con previa cita</p>
+                <p><strong>Ciudad:</strong> Av lindero, 1 de Junio esquina, 43840 El Mirador, Hgo.</p>
+                <p><strong>Horario:</strong> Lunes a domingo, 10:00 a.m. a 6:00 p.m. o previa cita.</p>
             </div>
 
-            <a href="https://maps.app.goo.gl/XvYNkoLtyD5XYHTf9" 
+            <a href="https://maps.app.goo.gl/QhVsChsDUgza8kB46" 
                target="_blank" 
                class="btn-mapa">
                 Cómo llegar
@@ -451,7 +462,7 @@ setInterval(() => {
     index++;
     if (index >= slides.length) index = 0;
     showSlide(index);
-}, 3000);
+}, 7000);
 </script>
 
 <script>
