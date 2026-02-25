@@ -231,44 +231,111 @@ window.addEventListener("scroll", function() {
 
     <div class="slider-container">
 
-         
-         <div class="slide active"
-                data-bg="img/bodas/boda1.jpg">
+        <!-- BODAS -->
+        <div class="slide active"
+             data-bg="img/bodas/boda1.jpg"
+             data-link="galeria-bodas.html">
 
-         <img src="img/bodas/boda1.jpg" alt="Bodas en GC Kabul">
+            <img src="img/bodas/boda1.jpg" alt="Bodas en GC Kabul">
 
-        <div class="slide-content">
-        <h2>BODAS</h2>
-        <p><strong>Momentos inolvidables en GC Kabul</strong> </p>
+            <div class="slide-content">
+                <h2>BODAS</h2>
+                <p>Momentos inolvidables en GC Kabul</p>
+            </div>
         </div>
-    </div>
 
+        <!-- XV -->
         <div class="slide"
-                data-bg="img/xv/xv1.jpg.jpeg">
+             data-bg="img/xv/xv1.jpg.jpeg"
+             data-link="galeria-xv.html">
 
-         <img src="img/xv/xv1.jpg.jpeg" alt="XV años en GC Kabul">
+            <img src="img/xv/xv1.jpg.jpeg" alt="XV años en GC Kabul">
+
             <div class="slide-content">
                 <h2>XV AÑOS</h2>
-                <p><strong>Celebraciones llenas de magia en GC Kabul</strong> </p>
+                <p>Celebraciones llenas de magia</p>
             </div>
         </div>
 
+        <!-- CORPORATIVO -->
         <div class="slide"
-                data-bg="img/Coorp/coorp1.jpg.jpeg">
+             data-bg="img/Coorp/coorp1.jpg.jpeg"
+             data-link="galeria-corporativo.html">
 
-         <img src="img/Coorp/coorp1.jpg.jpeg" alt="Eventos corporativos en GC Kabul">
-            <div class="slide-content">
+            <img src="img/Coorp/coorp1.jpg.jpeg" alt="Eventos corporativos en GC Kabul">
+
             <div class="slide-content">
                 <h2>EVENTOS CORPORATIVOS</h2>
-                <p><strong>Espacios profesionales y elegantes en GC Kabul</strong></p>
+                <p>Espacios profesionales y elegantes</p>
             </div>
         </div>
 
-
-    </div>
         <button class="slider-nav slider-prev">&#10094;</button>
         <button class="slider-nav slider-next">&#10095;</button>
+
+    </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const slides = document.querySelectorAll(".slide");
+        const nextBtn = document.querySelector(".slider-next");
+        const prevBtn = document.querySelector(".slider-prev");
+        const bg = document.getElementById("sliderBg");
+        const slider = document.querySelector(".hero-slider");
+
+        let index = 0;
+
+        bg.style.backgroundImage = `url(${slides[0].dataset.bg})`;
+
+        function showSlide(i) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[i].classList.add("active");
+            bg.style.backgroundImage = `url(${slides[i].dataset.bg})`;
+        }
+
+        nextBtn.addEventListener("click", () => {
+            index++;
+            if (index >= slides.length) index = 0;
+            showSlide(index);
+        });
+
+        prevBtn.addEventListener("click", () => {
+            index--;
+            if (index < 0) index = slides.length - 1;
+            showSlide(index);
+        });
+
+        let autoSlide = setInterval(nextAutoSlide, 5000);
+
+        function nextAutoSlide() {
+            index++;
+            if (index >= slides.length) index = 0;
+            showSlide(index);
+        }
+
+        slider.addEventListener("mouseenter", () => {
+            clearInterval(autoSlide);
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            autoSlide = setInterval(nextAutoSlide, 5000);
+        });
+
+        /* CLICK PARA IR A GALERÍA */
+        slides.forEach(slide => {
+            slide.addEventListener("click", function() {
+                const link = this.dataset.link;
+                if (link) {
+                    window.location.href = link;
+                }
+            });
+        });
+
+    });
+    </script>
+
 
 <section id="ubicacion" class="ubicacion-section">
 
@@ -457,12 +524,26 @@ prevBtn.addEventListener("click", () => {
     showSlide(index);
 });
 
-/* Auto slide opcional */
-setInterval(() => {
+/* Auto slide */
+let autoSlide = setInterval(nextAutoSlide, 3000);
+
+function nextAutoSlide() {
     index++;
     if (index >= slides.length) index = 0;
     showSlide(index);
-}, 7000);
+}
+
+/* Pausar al pasar el mouse */
+const slider = document.querySelector(".hero-slider");
+
+slider.addEventListener("mouseenter", () => {
+    clearInterval(autoSlide);
+});
+
+/* Reanudar cuando el mouse sale */
+slider.addEventListener("mouseleave", () => {
+    autoSlide = setInterval(nextAutoSlide, 3000);
+});
 </script>
 
 <script>
@@ -486,7 +567,13 @@ form.addEventListener("submit", function(e) {
 
 
 <footer class="footer">
-    <p>© 2026 GC Kabul | Todos los derechos reservados</p>
+  <p>© 2026 GC Kabul. Todos los derechos reservados.</p>
+  <p class="creditos">
+     Sitio web diseñado y desarrollado por 
+     <a href="https://platinumbridgegroup.com" target="_blank">
+        Platinum Bridge Group
+     </a>
+  </p>
 </footer>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
