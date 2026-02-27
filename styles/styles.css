@@ -190,6 +190,27 @@ body {
     overflow: hidden;
 }
 
+.btn-whatsapp-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-whatsapp-hero svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+}
+
+.btn-whatsapp-hero:hover svg {
+    transform: scale(1.15);
+}
+
+/* Animación elegante */
+.btn-whatsapp-hero:hover svg {
+    transform: scale(1.15);
+}
+
 /* Hover elegante */
 .btn-premium:hover {
     transform: translateY(-6px);
